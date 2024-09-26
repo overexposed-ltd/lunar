@@ -285,7 +285,7 @@
                                         <x-l-tables::cell :sort="true"
                                                           wire:key="column_{{ $column->field }}_{{ $row->id }}">
                                             @if ($column->isLivewire())
-                                                <livewire:is :component="$column->getLivewire()" />
+                                                <livewire:is :component="$column->getLivewire()" :record="$row"/>
                                             @elseif($column->isViewComponent())
                                                 <x-dynamic-component :component="$column->getViewComponent()"
                                                                      :record="$row" />
